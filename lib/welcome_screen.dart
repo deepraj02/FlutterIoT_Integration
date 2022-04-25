@@ -3,7 +3,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:sih_sample_app/second_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
-    static const String id = 'welcome_screen';
+  static const String id = 'welcome_screen';
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
@@ -82,7 +82,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   "Smart India Hackathon 2022",
                   textStyle: TextStyle(
                     fontFamily: 'Lobstar',
-                    fontSize: 30.0,
+                    fontSize: MediaQuery.of(context).size.width / 13,
                     fontWeight: FontWeight.w400,
                     color: Color.fromARGB(244, 31, 29, 29),
                   ),
