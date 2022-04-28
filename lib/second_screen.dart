@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:sih_sample_app/main.dart';
 import 'package:sih_sample_app/welcome_screen.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter_switch/flutter_switch.dart';
+import 'package:toggle_switch/toggle_switch.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SecondPage extends StatefulWidget {
   @override
   State<SecondPage> createState() => _SecondPageState();
 }
 
+bool isToggLIGHT = false;
+
 class _SecondPageState extends State<SecondPage> {
+/*   postData() async {
+    var dataSent = http
+        .post(Uri.parse("https://senester-six.herokuapp.com/LIGHTNumber"), body: {
+      "LIGHT": "",
+    });
+  }
+ */
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,66 +32,257 @@ class _SecondPageState extends State<SecondPage> {
         crossAxisAlignment: CrossAxisAlignment.center, */
 
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(
-              height: 70,
-            ),
             Hero(
               tag: "icon",
               child: Image.asset(
                 "images/sih.png",
-                width: 380,
-                height: 380,
+                width: 350,
+                height: 350,
               ),
             ),
             Expanded(
               child: Column(
                 children: [
-                  ButtonWidget(
-                      theText: "Button 1", buttonColour: Color(0xFF4CAF50)),
-                  ButtonWidget(
-                      theText: "Button 1", buttonColour: Color(0xFF008CBA)),
-                  ButtonWidget(
-                      theText: "Button 1", buttonColour: Color(0xFFf44336)),
-                  ButtonWidget(
-                      theText: "Button 1", buttonColour: Color(0xFFe7e7e7)),
-                  ButtonWidget(
-                      theText: "Button 1", buttonColour: Color(0xFF555555)),
-                  ButtonWidget(
-                      theText: "Button 1", buttonColour: Color(0xFFF0BA69)),
+                  Text("LIGHT 1"),
+                  ToggleSwitch(
+                    minWidth: 80.0,
+                    minHeight: 40.0,
+                    initialLabelIndex: 0,
+                    cornerRadius: 20.0,
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    totalSwitches: 2,
+                    icons: [
+                      FontAwesomeIcons.lightbulb,
+                      FontAwesomeIcons.solidLightbulb,
+                    ],
+                    iconSize: 20.0,
+                    activeBgColors: [
+                      [Colors.black45, Colors.black26],
+                      [Colors.yellow, Colors.orange]
+                    ],
+                    animate:
+                        true, // with just animate set to true, default curve = Curves.easeIn
+                    curve: Curves
+                        .bounceInOut, // animate must be set to true when using custom curve
+                    onToggle: (index) async {
+                      try {
+                        var url =
+                            Uri.parse('https://senester-six.herokuapp.com/');
+                        var response = await http.post(url, body: {'led': "1"});
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.body}');
+                      } on Exception catch (e) {
+                        print(e);
+                      }
+                      print('switched to: $index');
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("LIGHT 2"),
+                  ToggleSwitch(
+                    minWidth: 80.0,
+                    minHeight: 40.0,
+                    initialLabelIndex: 0,
+                    cornerRadius: 20.0,
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    totalSwitches: 2,
+                    icons: [
+                      FontAwesomeIcons.lightbulb,
+                      FontAwesomeIcons.solidLightbulb,
+                    ],
+                    iconSize: 20.0,
+                    activeBgColors: [
+                      [Colors.black45, Colors.black26],
+                      [Colors.yellow, Colors.orange]
+                    ],
+                    animate:
+                        true, // with just animate set to true, default curve = Curves.easeIn
+                    curve: Curves
+                        .bounceInOut, // animate must be set to true when using custom curve
+                    onToggle: (index) async {
+                      try {
+                        var url =
+                            Uri.parse('https://senester-six.herokuapp.com/');
+                        var response = await http.post(url, body: {'led': "2"});
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.body}');
+                      } on Exception catch (e) {
+                        print(e);
+                      }
+                      print('switched to: $index');
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("LIGHT 3"),
+                  ToggleSwitch(
+                    minWidth: 80.0,
+                    minHeight: 40.0,
+                    initialLabelIndex: 0,
+                    cornerRadius: 20.0,
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    totalSwitches: 2,
+                    icons: [
+                      FontAwesomeIcons.lightbulb,
+                      FontAwesomeIcons.solidLightbulb,
+                    ],
+                    iconSize: 20.0,
+                    activeBgColors: [
+                      [Colors.black45, Colors.black26],
+                      [Colors.yellow, Colors.orange]
+                    ],
+                    animate:
+                        true, // with just animate set to true, default curve = Curves.easeIn
+                    curve: Curves
+                        .bounceInOut, // animate must be set to true when using custom curve
+                    onToggle: (index) async {
+                      try {
+                        var url =
+                            Uri.parse('https://senester-six.herokuapp.com/');
+                        var response = await http.post(url, body: {'led': "3"});
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.body}');
+                      } on Exception catch (e) {
+                        print(e);
+                      }
+                      print('switched to: $index');
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("LIGHT 4"),
+                  ToggleSwitch(
+                    minWidth: 80.0,
+                    minHeight: 40.0,
+                    initialLabelIndex: 0,
+                    cornerRadius: 20.0,
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    totalSwitches: 2,
+                    icons: [
+                      FontAwesomeIcons.lightbulb,
+                      FontAwesomeIcons.solidLightbulb,
+                    ],
+                    iconSize: 20.0,
+                    activeBgColors: [
+                      [Colors.black45, Colors.black26],
+                      [Colors.yellow, Colors.orange]
+                    ],
+                    animate:
+                        true, // with just animate set to true, default curve = Curves.easeIn
+                    curve: Curves
+                        .bounceInOut, // animate must be set to true when using custom curve
+                    onToggle: (index) async {
+                      try {
+                        var url =
+                            Uri.parse('https://senester-six.herokuapp.com/');
+                        var response = await http.post(url, body: {'led': "4"});
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.body}');
+                      } on Exception catch (e) {
+                        print(e);
+                      }
+                      print('switched to: $index');
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("LIGHT 5"),
+                  ToggleSwitch(
+                    minWidth: 80.0,
+                    minHeight: 40.0,
+                    initialLabelIndex: 0,
+                    cornerRadius: 20.0,
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    totalSwitches: 2,
+                    icons: [
+                      FontAwesomeIcons.lightbulb,
+                      FontAwesomeIcons.solidLightbulb,
+                    ],
+                    iconSize: 20.0,
+                    activeBgColors: [
+                      [Colors.black45, Colors.black26],
+                      [Colors.yellow, Colors.orange]
+                    ],
+                    animate:
+                        true, // with just animate set to true, default curve = Curves.easeIn
+                    curve: Curves
+                        .bounceInOut, // animate must be set to true when using custom curve
+                    onToggle: (index) async {
+                      try {
+                        var url =
+                            Uri.parse('https://senester-six.herokuapp.com/');
+                        var response = await http.post(url, body: {'led': "5"});
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.body}');
+                      } on Exception catch (e) {
+                        print(e);
+                      }
+                      print('switched to: $index');
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("LIGHT 6"),
+                  ToggleSwitch(
+                    minWidth: 80.0,
+                    minHeight: 40.0,
+                    initialLabelIndex: 0,
+                    cornerRadius: 20.0,
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    totalSwitches: 2,
+                    icons: [
+                      FontAwesomeIcons.lightbulb,
+                      FontAwesomeIcons.solidLightbulb,
+                    ],
+                    iconSize: 20.0,
+                    activeBgColors: [
+                      [Colors.black45, Colors.black26],
+                      [Colors.yellow, Colors.orange]
+                    ],
+                    animate:
+                        true, // with just animate set to true, default curve = Curves.easeIn
+                    curve: Curves
+                        .bounceInOut, // animate must be set to true when using custom curve
+                    onToggle: (index) async {
+                      try {
+                        var url =
+                            Uri.parse('https://senester-six.herokuapp.com/');
+                        var response = await http.post(url, body: {'led': "6"});
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.body}');
+                      } on Exception catch (e) {
+                        print(e);
+                      }
+                      print('switched to: $index');
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             ),
           ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.popAndPushNamed(context, WelcomeScreen.id);
-          },
-          child: Icon(Icons.arrow_back_ios_new),
-          backgroundColor: Color.fromARGB(255, 217, 97, 89),
-        ),
-      ),
-    );
-  }
-}
-
-class ButtonWidget extends StatelessWidget {
-  String theText;
-
-  Color buttonColour;
-  ButtonWidget({required this.theText, required this.buttonColour});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialButton(
-      color: buttonColour,
-      minWidth: 150,
-      onPressed: () {},
-      child: Text(
-        theText,
-        style: TextStyle(
-          color: Color(0xFF030202),
         ),
       ),
     );
