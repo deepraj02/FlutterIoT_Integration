@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sih_sample_app/main.dart';
-import 'package:sih_sample_app/welcome_screen.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -26,7 +23,7 @@ class _SecondPageState extends State<SecondPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 196, 216, 226),
+        backgroundColor: const Color.fromARGB(255, 196, 216, 226),
         body: Column(
           /* mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center, */
@@ -45,7 +42,7 @@ class _SecondPageState extends State<SecondPage> {
             Expanded(
               child: Column(
                 children: [
-                  Text("LIGHT 1"),
+                  const Text("LIGHT 1"),
                   ToggleSwitch(
                     minWidth: 80.0,
                     minHeight: 40.0,
@@ -55,12 +52,12 @@ class _SecondPageState extends State<SecondPage> {
                     inactiveBgColor: Colors.grey,
                     inactiveFgColor: Colors.white,
                     totalSwitches: 2,
-                    icons: [
+                    icons: const [
                       FontAwesomeIcons.lightbulb,
                       FontAwesomeIcons.solidLightbulb,
                     ],
                     iconSize: 20.0,
-                    activeBgColors: [
+                    activeBgColors: const [
                       [Colors.black45, Colors.black26],
                       [Colors.yellow, Colors.orange]
                     ],
@@ -81,10 +78,10 @@ class _SecondPageState extends State<SecondPage> {
                       print('switched to: $index');
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text("LIGHT 2"),
+                  const Text("LIGHT 2"),
                   ToggleSwitch(
                     minWidth: 80.0,
                     minHeight: 40.0,
@@ -94,12 +91,12 @@ class _SecondPageState extends State<SecondPage> {
                     inactiveBgColor: Colors.grey,
                     inactiveFgColor: Colors.white,
                     totalSwitches: 2,
-                    icons: [
+                    icons: const [
                       FontAwesomeIcons.lightbulb,
                       FontAwesomeIcons.solidLightbulb,
                     ],
                     iconSize: 20.0,
-                    activeBgColors: [
+                    activeBgColors: const [
                       [Colors.black45, Colors.black26],
                       [Colors.yellow, Colors.orange]
                     ],
@@ -120,10 +117,10 @@ class _SecondPageState extends State<SecondPage> {
                       print('switched to: $index');
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text("LIGHT 3"),
+                  const Text("LIGHT 3"),
                   ToggleSwitch(
                     minWidth: 80.0,
                     minHeight: 40.0,
@@ -133,12 +130,12 @@ class _SecondPageState extends State<SecondPage> {
                     inactiveBgColor: Colors.grey,
                     inactiveFgColor: Colors.white,
                     totalSwitches: 2,
-                    icons: [
+                    icons: const [
                       FontAwesomeIcons.lightbulb,
                       FontAwesomeIcons.solidLightbulb,
                     ],
                     iconSize: 20.0,
-                    activeBgColors: [
+                    activeBgColors: const [
                       [Colors.black45, Colors.black26],
                       [Colors.yellow, Colors.orange]
                     ],
@@ -159,10 +156,10 @@ class _SecondPageState extends State<SecondPage> {
                       print('switched to: $index');
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text("LIGHT 4"),
+                  const Text("LIGHT 4"),
                   ToggleSwitch(
                     minWidth: 80.0,
                     minHeight: 40.0,
@@ -172,12 +169,12 @@ class _SecondPageState extends State<SecondPage> {
                     inactiveBgColor: Colors.grey,
                     inactiveFgColor: Colors.white,
                     totalSwitches: 2,
-                    icons: [
+                    icons: const [
                       FontAwesomeIcons.lightbulb,
                       FontAwesomeIcons.solidLightbulb,
                     ],
                     iconSize: 20.0,
-                    activeBgColors: [
+                    activeBgColors: const [
                       [Colors.black45, Colors.black26],
                       [Colors.yellow, Colors.orange]
                     ],
@@ -198,10 +195,10 @@ class _SecondPageState extends State<SecondPage> {
                       print('switched to: $index');
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text("LIGHT 5"),
+                  const Text("LIGHT 5"),
                   ToggleSwitch(
                     minWidth: 80.0,
                     minHeight: 40.0,
@@ -211,12 +208,12 @@ class _SecondPageState extends State<SecondPage> {
                     inactiveBgColor: Colors.grey,
                     inactiveFgColor: Colors.white,
                     totalSwitches: 2,
-                    icons: [
+                    icons: const [
                       FontAwesomeIcons.lightbulb,
                       FontAwesomeIcons.solidLightbulb,
                     ],
                     iconSize: 20.0,
-                    activeBgColors: [
+                    activeBgColors: const [
                       [Colors.black45, Colors.black26],
                       [Colors.yellow, Colors.orange]
                     ],
@@ -237,10 +234,10 @@ class _SecondPageState extends State<SecondPage> {
                       print('switched to: $index');
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text("LIGHT 6"),
+                  const Text("LIGHT 6"),
                   ToggleSwitch(
                     minWidth: 80.0,
                     minHeight: 40.0,
@@ -250,12 +247,12 @@ class _SecondPageState extends State<SecondPage> {
                     inactiveBgColor: Colors.grey,
                     inactiveFgColor: Colors.white,
                     totalSwitches: 2,
-                    icons: [
+                    icons: const [
                       FontAwesomeIcons.lightbulb,
                       FontAwesomeIcons.solidLightbulb,
                     ],
                     iconSize: 20.0,
-                    activeBgColors: [
+                    activeBgColors: const [
                       [Colors.black45, Colors.black26],
                       [Colors.yellow, Colors.orange]
                     ],
@@ -276,7 +273,7 @@ class _SecondPageState extends State<SecondPage> {
                       print('switched to: $index');
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                 ],

@@ -17,15 +17,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       vsync: this,
       //upperBound: 100,
     );
     logoAnimation =
         CurvedAnimation(parent: controller, curve: Curves.decelerate);
     animation = ColorTween(
-            begin: Color.fromARGB(255, 221, 198, 156),
-            end: Color.fromARGB(255, 196, 216, 226))
+            begin: const Color.fromARGB(255, 221, 198, 156),
+            end: const Color.fromARGB(255, 196, 216, 226))
         .animate(controller);
     controller.forward();
     controller.addListener(() {
@@ -51,7 +51,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             children: <Widget>[
               Hero(
                 tag: 'icon',
-                child: Container(
+                child: SizedBox(
                   child: Image.asset(
                     "images/sih.png",
                   ),
@@ -65,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               animatedTexts: [
                 TypewriterAnimatedText(
                   "MargDarshak",
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     fontFamily: 'Lobstar',
                     fontSize: 45.0,
                     fontWeight: FontWeight.w600,
@@ -84,7 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     fontFamily: 'Lobstar',
                     fontSize: MediaQuery.of(context).size.width / 13,
                     fontWeight: FontWeight.w400,
-                    color: Color.fromARGB(244, 31, 29, 29),
+                    color: const Color.fromARGB(244, 31, 29, 29),
                   ),
                 ),
               ],
@@ -99,8 +99,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             MaterialPageRoute(builder: (context) => SecondPage()),
           );
         },
-        child: Icon(Icons.arrow_forward_ios),
-        backgroundColor: Color.fromARGB(255, 217, 97, 89),
+        child: const Icon(Icons.arrow_forward_ios),
+        backgroundColor: const Color.fromARGB(255, 217, 97, 89),
       ),
     );
   }
