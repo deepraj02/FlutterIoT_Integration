@@ -48,7 +48,7 @@
     -BreadBoard
     -6 LED's(any color)
     -7 Jumper Wires (F=>M)
-    
+    note: you can adjust hardware requirements (modal) as per your requirments
 
 
 
